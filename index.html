@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyberpunk Landing Page</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Cyberpunk-themed landing page template built with Tailwind CSS and JavaScript." />
+  <!-- Custom Styles for Animations -->
+  <style>
+    /* Basic glitch effect */
+    .glitch {
+      position: relative;
+      text-shadow: 2px 2px 3px rgba(0, 255, 255, 0.5); /* Neon cyan */
+    }
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.8;
+    }
+    .glitch::before {
+      left: -2px;
+      text-shadow: -2px 0 3px rgba(255, 0, 255, 0.5); /* Neon magenta */
+      clip-path: polygon(0 0, 100% 0, 100% 30%, 0 30%);
+      animation: glitch-anim 2s infinite linear alternate-reverse;
+    }
+    .glitch::after {
+      left: 2px;
+      text-shadow: 2px 0 3px rgba(0, 255, 0, 0.5); /* Neon green */
+      clip-path: polygon(0 70%, 100% 70%, 100% 100%, 0 100%);
+      animation: glitch-anim 1.5s infinite linear alternate;
+    }
+    @keyframes glitch-anim {
+      0% {
+        transform: translate(0);
+      }
+      10% {
+        transform: translate(-5px, -5px);
+      }
+      20% {
+        transform: translate(5px, 5px);
+      }
+      30% {
+        transform: translate(-5px, 5px);
+      }
+      40% {
+        transform: translate(5px, -5px);
+      }
+      50% {
+        transform: translate(0);
+      }
+      100% {
+        transform: translate(0);
+      }
+    }
+    /* Basic fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .fade-in.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-mono">
+  <!-- Navigation -->
+  <nav class="bg-gray-900 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex">
+          <div class="flex-shrink-0 flex items-center">
+            <a href="#" class="text-2xl font-bold text-green-400 glitch" data-text="CYBER">AIVAST</a>
+          </div>
+          <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
+            <a href="#hero" class="text-green-400 hover:text-white inline-flex items-center px-1 pt-1 text-sm font-medium">Home</a>
+            <a href="#features" class="text-green-400 hover:text-white inline-flex items-center px-1 pt-1 text-sm font-medium">Features</a>
+            <a href="#about" class="text-green-400 hover:text-white inline-flex items-center px-1 pt-1 text-sm font-medium">About</a>
+            <a href="#contact" class="text-green-400 hover:text-white inline-flex items-center px-1 pt-1 text-sm font-medium">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="bg-cover bg-center" style="background-image: url('https://cdn.mos.cms.futurecdn.net/YvuKkPbZsS2EXzPbWtnvP.jpg');">
+    <div class="bg-black bg-opacity-75">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-48">
+        <div class="text-center">
+          <h1 class="text-6xl font-extrabold text-green-400 glitch fade-in" data-text="WELCOME">WELCOME</h1>
+          <p class="mt-4 text-2xl text-gray-300 fade-in">TO THE FUTURE</p>
+          <div class="mt-12">
+            <a href="#features" class="px-12 py-4 bg-green-500 text-gray-900 rounded-md shadow-lg hover:bg-green-600 transition font-semibold text-lg fade-in">EXPLORE</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-20 bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-green-400 glitch fade-in" data-text="FEATURES">FEATURES</h2>
+        <p class="mt-4 text-xl text-gray-300 fade-in">Cutting-edge technology at your fingertips.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <!-- Feature 1 -->
+        <div class="p-8 bg-gray-900 rounded-xl shadow-xl hover:shadow-2xl transition transform hover:-translate-y-2 fade-in">
+          <div class="mb-6">
+            <svg class="w-16 h-16 text-green-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold text-green-400 glitch" data-text="Feature One">Feature One</h3>
+          <p class="mt-4 text-gray-300">Description of feature one goes here.  Cyberpunk style description.</p>
+        </div>
+        <!-- Feature 2 -->
+        <div class="p-8 bg-gray-900 rounded-xl shadow-xl hover:shadow-2xl transition transform hover:-translate-y-2 fade-in">
+          <div class="mb-6">
+            <svg class="w-16 h-16 text-green-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 0H4m12 0h-2m-4 0a2 2 0 100 4m0-4a2 2 0 110 4m0 6V16m0 2a2 2 0 100 4m0-4a2 2 0 110 4" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold text-green-400 glitch" data-text="Feature Two">Feature Two</h3>
+          <p class="mt-4 text-gray-300">Description of feature two goes here. Cyberpunk style description.</p>
+        </div>
+        <!-- Feature 3 -->
+        <div class="p-8 bg-gray-900 rounded-xl shadow-xl hover:shadow-2xl transition transform hover:-translate-y-2 fade-in">
+          <div class="mb-6">
+            <svg class="w-16 h-16 text-green-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold text-green-400 glitch" data-text="Feature Three">Feature Three</h3>
+          <p class="mt-4 text-gray-300">Description of feature three goes here. Cyberpunk style description.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-gray-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-green-400 glitch fade-in" data-text="ABOUT">ABOUT</h2>
+        <p class="mt-4 text-xl text-gray-300 fade-in">Learn more about our futuristic vision.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div class="fade-in">
+          <img src="https://www.cyberpunk.net/build/images/cyberpunk/keyart-booklet@1x-6fce3457.jpg" alt="About Image" class="rounded-xl shadow-2xl" id="about-image" />
+        </div>
+        <div class="fade-in">
+          <h3 class="text-3xl font-semibold text-green-400 glitch" data-text="Our Mission">Our Mission</h3>
+          <p class="mt-4 text-gray-300">We are dedicated to pushing the boundaries of technology and innovation.  Cyberpunk style mission statement.</p>
+          <a href="#contact" class="mt-8 inline-block px-8 py-4 bg-green-500 text-gray-900 rounded-md shadow-lg hover:bg-green-600 transition font-semibold text-lg">GET IN TOUCH</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-green-400 glitch fade-in" data-text="CONTACT">CONTACT</h2>
+        <p class="mt-4 text-xl text-gray-300 fade-in">Connect with us to shape the future.</p>
+      </div>
+      <form class="max-w-xl mx-auto fade-in" id="contact-form">
+        <div class="mb-6">
+          <label class="block text-gray-300 text-lg font-medium" for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" class="w-full px-6 py-4 bg-gray-900 border-2 border-green-500 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-green-500 text-lg" />
+        </div>
+        <div class="mb-6">
+          <label class="block text-gray-300 text-lg font-medium" for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Your Email" class="w-full px-6 py-4 bg-gray-900 border-2 border-green-500 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-green-500 text-lg" />
+        </div>
+        <div class="mb-8">
+          <label class="block text-gray-300 text-lg font-medium" for="message">Message</label>
+          <textarea id="message" name="message" rows="6" placeholder="Your Message" class="w-full px-6 py-4 bg-gray-900 border-2 border-green-500 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-green-500 text-lg"></textarea>
+        </div>
+        <button type="submit" class="w-full px-8 py-4 bg-green-500 text-gray-900 rounded-xl shadow-lg hover:bg-green-600 transition font-semibold text-lg">SEND MESSAGE</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400">&copy; 2077 Cyberpunk Company. All rights reserved.</p>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+          <a href="#" class="text-gray-400 hover:text-green-400">Privacy Policy</a>
+          <a href="#" class="text-gray-400 hover:text-green-400">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Animations and Interactivity -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Fade-in effect on scroll
+      const faders = document.querySelectorAll('.fade-in');
+      const appearOptions = {
+        threshold: 0.2,
+        rootMargin: "0px 0px -50px 0px"
+      };
+      const appearOnScroll = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            appearOnScroll.unobserve(entry.target);
+          }
+        });
+      }, appearOptions);
+      faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+      });
+      
+      // Smooth scroll for navigation links
+      const navLinks = document.querySelectorAll('nav a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          const targetSection = document.getElementById(targetId);
+          if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+      
+      // Dummy contact form submission handler
+      document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Message sent to the mainframe! (Demo submission)');
+        this.reset();
+      });
+    });
+  </script>
+</body>
+</html>
